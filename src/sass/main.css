@@ -2,6 +2,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -132,6 +133,8 @@ h6 {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px -1px rgba(174, 26, 150, 0.1), 0px 0px 20px -1px rgba(174, 26, 150, 0.15), 0px 0px 25px -1px rgba(174, 26, 150, 0.2);
+          box-shadow: 0px 0px 15px -1px rgba(174, 26, 150, 0.1), 0px 0px 20px -1px rgba(174, 26, 150, 0.15), 0px 0px 25px -1px rgba(174, 26, 150, 0.2);
 }
 
 .btn2 {
@@ -214,7 +217,9 @@ h6 {
 }
 
 .btn-circle:hover .arrow-icon,
-.btn-circle:focus .aroww-icon {
+.btn-circle:focus .aroww-icon,
+.btn-circle:hover .arrow-icon-1,
+.btn-circle:focus .aroww-icon-1 {
   fill: #ffffff;
 }
 
@@ -228,6 +233,16 @@ h6 {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #ffb8ca;
+  position: relative;
+  z-index: 1002;
+}
+
+@media screen and (max-width: 767px) {
+  .head-container {
+    background-image: url("./../images/hero/icecream_mob.png"), url("./../images/hero/ellipse_mob.png");
+    background-repeat: no-repeat;
+    background-position: right 32px bottom 0px, top 92px right 0px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -249,14 +264,6 @@ h6 {
   width: 320px;
   padding-top: 6px;
   padding-left: 20px;
-}
-
-@media screen and (max-width: 767px) {
-  .above-container {
-    background-image: url("./../images/hero/icecream_mob.png"), url("./../images/hero/ellipse_mob.png");
-    background-repeat: no-repeat;
-    background-position: left 117px bottom 0px, top 92px right 0px;
-  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -764,8 +771,9 @@ h6 {
 .up-btn {
   position: fixed;
   z-index: 1000;
-  right: 10%;
+  right: 5%;
   bottom: 10%;
+  opacity: 0.5;
   width: 40px;
   height: 40px;
   font-weight: 700;
@@ -1035,14 +1043,16 @@ h6 {
   }
 }
 
-.arrow-icon {
+.arrow-icon-1 {
   fill: #d41443;
-  width: 9px;
+  width: 7px;
+  height: 5px;
 }
 
 @media screen and (min-width: 1280px) {
-  .arrow-icon {
+  .arrow-icon-1 {
     width: 13px;
+    height: 7px;
   }
 }
 
@@ -2228,6 +2238,7 @@ h6 {
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
     width: 100%;
+    height: 300px;
     background-image: url(../images/section5/img51-desktop.png);
     background-image: url(../images/section5/img51-desktop@2x.png);
     background-size: cover;
@@ -2291,8 +2302,6 @@ footer {
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .text-block {
-    margin-left: 20px;
-    margin-right: 20px;
     width: 340px;
   }
 }
@@ -2379,12 +2388,6 @@ footer {
           justify-content: flex-end;
 }
 
-@media screen and (min-width: 768px) {
-  .social-link {
-    margin-right: 20px;
-  }
-}
-
 .social-link-position {
   margin-right: 24px;
   -webkit-box-pack: center;
@@ -2435,7 +2438,8 @@ footer {
           align-items: center;
 }
 
-.social-icon:hover {
+.social-icon:hover,
+.social-icon:focus {
   background-color: #d41443;
 }
 
@@ -2475,7 +2479,6 @@ footer {
   .join {
     font-size: 14px;
     line-height: 1.86;
-    margin-right: 20px;
   }
 }
 
@@ -2484,7 +2487,6 @@ footer {
     font-size: 16px;
     line-height: 1.86;
     letter-spacing: 0.02em;
-    margin-right: 20px;
   }
 }
 
